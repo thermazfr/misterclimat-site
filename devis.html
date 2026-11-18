@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- PROTOTYPE : la ligne « noindex » ci-dessous empêche Google de lister la page. À RETIRER le jour du lancement. -->
+<meta name="robots" content="noindex">
+<title>Devis et contact | Mister Climat, climatisation à Eyguières</title>
+<meta name="description" content="Demandez un devis de climatisation ou un rendez-vous d'entretien à Mister Climat, Eyguières. Formulaire court ou appel direct au 07 49 93 53 15.">
+<link rel="canonical" href="https://misterclimat.fr/devis.html">
+<meta name="theme-color" content="#123A5E">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="proto">Prototype, non publié. Tout ce qui est entre [crochets] reste à remplir avec les vraies informations de l'entreprise.</div>
+<a class="passer" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="Mister Climat, accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#123A5E"/><circle cx="28" cy="12" r="5" fill="#F0B429"/><path d="M4 30l8-12 5 6 6-10 13 16z" fill="#FFFFFF"/></svg>
+      <span><b>Mister Climat</b><small>Climatisation · Eyguières</small></span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="installation.html">Installation</a>
+      <a href="entretien.html">Entretien</a>
+      <a href="depannage.html">Dépannage</a>
+      <a href="index.html#secteurs">Secteurs</a>
+      <a href="devis.html" aria-current="page">Devis</a>
+    </nav>
+    <a class="call" href="tel:+33749935315" data-suivi="appel-entete"><span class="ico-tel" aria-hidden="true"></span><span class="num">07 49 93 53 15</span></a>
+  </div>
+</header>
+
+<main id="contenu">
+
+<section class="haut">
+  <div class="in haut-grille">
+    <div>
+      <p class="fil"><a href="index.html">Accueil</a> › Devis et contact</p>
+      <h1>Demander un devis ou un rendez-vous</h1>
+      <p class="chapo">Quatre questions, trente secondes. Pour une panne, appelez plutôt : c'est plus rapide pour tout le monde.</p>
+      <div class="bts">
+        <a class="bt bt-soleil bt-appel" href="tel:+33749935315" data-suivi="appel-page"><span class="ico-tel" aria-hidden="true"></span>Appeler le 07 49 93 53 15</a>
+      </div>
+      <h2 style="margin-top:22px">Ce qui se passe ensuite</h2>
+      <ol>
+        <li>Vous êtes rappelé dans la journée pour préciser votre besoin.</li>
+        <li>Pour une installation, une visite sur place est fixée : <span class="ph">[VISITE GRATUITE ? À CONFIRMER]</span>.</li>
+        <li>Vous recevez un devis écrit et détaillé. Rien ne démarre sans votre accord signé.</li>
+      </ol>
+      <h2>Coordonnées</h2>
+      <p>Mister Climat<br>13430 Eyguières<br>Téléphone : <a href="tel:+33749935315">07 49 93 53 15</a><br>E-mail : <a href="mailto:contact@misterclimat.fr">contact@misterclimat.fr</a><br>Horaires : du lundi au vendredi, de 8h à 19h</p>
+      <p class="petit">L'entreprise se déplace chez ses clients. <span class="ph">[ACCUEIL DU PUBLIC À L'ADRESSE : OUI / NON]</span></p>
+    </div>
+
+        <form class="quiz" id="demande" data-demande data-quiz action="[URL_FORMULAIRE]" method="post">
+      <p class="quiz-titre">Être rappelé, devis gratuit</p>
+      <p class="quiz-sous">4 questions, 30 secondes. Devis gratuit.</p>
+      <div class="quiz-barre" aria-hidden="true"><span></span></div>
+      <p class="quiz-num">Étape <b>1</b> sur <i>4</i></p>
+
+      <fieldset class="etape">
+        <legend>De quoi avez-vous besoin ?</legend>
+        <div class="choix">
+          <label><input type="radio" name="prestation" value="Installer une climatisation" required><span>Installer une clim<small>réversible, chaud et froid</small></span></label>
+          <label><input type="radio" name="prestation" value="Entretien ou nettoyage"><span>Entretien<small>nettoyage, contrôle</small></span></label>
+          <label><input type="radio" name="prestation" value="Clim en panne"><span>Clim en panne<small>fuite, ne chauffe plus…</small></span></label>
+          <label><input type="radio" name="prestation" value="Autre question"><span>Autre question<small>conseil, mise en service</small></span></label>
+        </div>
+        <div class="alerte-panne">Pour une panne, le plus rapide est d'appeler : <a href="tel:+33749935315" data-suivi="appel-formulaire-panne">07 49 93 53 15</a>. Vous pouvez aussi continuer, on vous rappelle.
+          <div class="quiz-nav" style="margin-top:10px"><button class="bt bt-trait" type="button" data-suivant>Continuer</button></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="etape">
+        <legend>Chez vous, c'est…</legend>
+        <div class="choix">
+          <label><input type="radio" name="logement" value="Maison" required><span>Une maison</span></label>
+          <label><input type="radio" name="logement" value="Appartement"><span>Un appartement</span></label>
+          <label><input type="radio" name="logement" value="Mas ou grande maison"><span>Un mas, une grande maison</span></label>
+          <label><input type="radio" name="logement" value="Commerce ou bureau"><span>Un commerce, un bureau</span></label>
+        </div>
+        <div class="quiz-nav"><button class="retour" type="button" data-retour>‹ Retour</button></div>
+      </fieldset>
+
+      <fieldset class="etape">
+        <legend>Combien de pièces ou d'appareils ?</legend>
+        <div class="choix">
+          <label><input type="radio" name="pieces" value="1" required><span>1</span></label>
+          <label><input type="radio" name="pieces" value="2 ou 3"><span>2 ou 3</span></label>
+          <label><input type="radio" name="pieces" value="4 et plus"><span>4 et plus</span></label>
+          <label><input type="radio" name="pieces" value="Je ne sais pas"><span>Je ne sais pas encore</span></label>
+        </div>
+        <div class="quiz-nav"><button class="retour" type="button" data-retour>‹ Retour</button></div>
+      </fieldset>
+
+      <fieldset class="etape">
+        <legend>Où et comment vous joindre ?</legend>
+        <div class="champ">
+          <label for="q-commune">Commune</label>
+          <input id="q-commune" name="commune" list="q-communes" autocomplete="address-level2" required>
+          <datalist id="q-communes">
+            <option value="Eyguières"><option value="Lamanon"><option value="Aureille"><option value="Sénas"><option value="Orgon"><option value="Plan-d'Orgon"><option value="Eygalières"><option value="Mollégès"><option value="Saint-Andiol"><option value="Cabannes"><option value="Noves"><option value="Châteaurenard"><option value="Eyragues"><option value="Maillane"><option value="Graveson"><option value="Saint-Rémy-de-Provence"><option value="Maussane-les-Alpilles"><option value="Mouriès"><option value="Les Baux-de-Provence"><option value="Paradou"><option value="Fontvieille"><option value="Saint-Étienne-du-Grès"><option value="Saint-Martin-de-Crau"><option value="Cavaillon"><option value="Cheval-Blanc"><option value="Taillades"><option value="Robion"><option value="Mérindol"><option value="Caumont-sur-Durance"><option value="Le Thor"><option value="L'Isle-sur-la-Sorgue">
+          </datalist>
+        </div>
+        <div class="champ">
+          <label for="q-nom">Prénom et nom</label>
+          <input id="q-nom" name="nom" autocomplete="name" required>
+        </div>
+        <div class="champ">
+          <label for="q-tel">Téléphone</label>
+          <input id="q-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9 +.\(\)\-]{10,}" required>
+        </div>
+        <div class="piege" aria-hidden="true"><label for="q-site">Ne pas remplir</label><input id="q-site" name="site_web" tabindex="-1" autocomplete="off"></div>
+        <div class="quiz-nav"><button class="retour" type="button" data-retour>‹ Retour</button><button class="bt bt-pin" type="submit">Être rappelé</button></div>
+        <p class="etat" role="status"></p>
+        <p class="petit">Rappel dans la journée. Votre numéro sert uniquement à vous rappeler, il n'est ni revendu ni transmis. <a href="mentions-legales.html#donnees">Vos données</a></p>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<section class="bloc bloc-sable">
+  <div class="in">
+    <h2>Communes desservies</h2>
+    <ul class="communes">
+      <li>Eyguières</li><li>Lamanon</li><li>Aureille</li><li>Sénas</li><li>Orgon</li><li>Plan-d'Orgon</li><li>Eygalières</li><li>Mollégès</li><li>Saint-Andiol</li><li>Cabannes</li><li>Noves</li><li>Châteaurenard</li><li>Eyragues</li><li>Maillane</li><li>Graveson</li><li>Saint-Rémy-de-Provence</li><li>Maussane-les-Alpilles</li><li>Mouriès</li><li>Les Baux-de-Provence</li><li>Paradou</li><li>Fontvieille</li><li>Saint-Étienne-du-Grès</li><li>Saint-Martin-de-Crau</li><li>Cavaillon</li><li>Cheval-Blanc</li><li>Taillades</li><li>Robion</li><li>Mérindol</li><li>Caumont-sur-Durance</li><li>Le Thor</li><li>L'Isle-sur-la-Sorgue</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="in">
+    <div class="pied-grille">
+      <div>
+        <h2>Mister Climat</h2>
+        <p>Climatisation réversible : pose, entretien, dépannage.<br>13430 Eyguières<br><a href="tel:+33749935315">07 49 93 53 15</a><br><a href="mailto:contact@misterclimat.fr">contact@misterclimat.fr</a></p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul><li><a href="installation.html">Installation</a></li><li><a href="entretien.html">Entretien</a></li><li><a href="depannage.html">Dépannage</a></li><li><a href="devis.html">Devis et contact</a></li></ul>
+      </div>
+      <div>
+        <h2>Secteurs</h2>
+        <ul><li><a href="climatisation-eyguieres.html">Eyguières</a></li><li><a href="climatisation-saint-remy-de-provence.html">Saint-Rémy et les Alpilles</a></li><li><a href="climatisation-cavaillon.html">Cavaillon et la Durance</a></li><li><a href="climatisation-chateaurenard.html">Châteaurenard et le nord</a></li></ul>
+      </div>
+    </div>
+    <div class="pied-bas"><span>© <span data-annee>2026</span> Mister Climat</span><span>SIRET 938 888 690 00014</span><a href="mentions-legales.html">Mentions légales et données personnelles</a></div>
+  </div>
+</footer>
+<div class="barre"><a class="bt bt-soleil bt-appel" href="tel:+33749935315" data-suivi="appel-barre"><span class="ico-tel" aria-hidden="true"></span>Appeler</a><a class="bt bt-trait" href="#demande">Formulaire</a></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
