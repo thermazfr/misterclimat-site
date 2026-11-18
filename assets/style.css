@@ -185,6 +185,17 @@ details p { margin: 10px 0 0; }
 .communes { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .communes li { margin: 0; background: var(--carte); border: 1px solid var(--filet); border-radius: 999px; padding: 4px 12px; font-size: .92rem; }
 
+.communes a { color: var(--pin); font-weight: 600; text-decoration: none; }
+.communes a:hover { text-decoration: underline; }
+.communes li:has(a):hover { border-color: var(--soleil); }
+
+/* Pages communes : encadré de conseils */
+.conseils { margin-top: 18px; max-width: 70ch; }
+.conseils ul { margin-bottom: 0; }
+.bloc p { max-width: 70ch; }
+.toutes-communes { margin-top: 22px; }
+.toutes-communes h3 { font-size: 1.05rem; margin-bottom: .6em; }
+
 /* Pied de page */
 .pied { background: var(--pin-fonce); color: #D6E4F0; padding-block: 36px 28px; font-size: .95rem; }
 .pied a { color: #fff; }
