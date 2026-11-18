@@ -197,6 +197,41 @@ details p { margin: 10px 0 0; }
 .toutes-communes { margin-top: 22px; }
 .toutes-communes h3 { font-size: 1.05rem; margin-bottom: .6em; }
 
+/* Carte des zones de déplacement (page dépannage) */
+.zcarte { display: grid; gap: 18px; margin-top: 16px; }
+@media (min-width: 900px) { .zcarte { grid-template-columns: 1.45fr 1fr; align-items: start; } }
+.zc-carte { background: var(--carte); border: 1px solid var(--filet); border-radius: 12px; padding: 10px; position: relative; }
+.zc-carte svg { display: block; width: 100%; height: auto; }
+.zc { stroke: #fff; stroke-width: 1.2; stroke-linejoin: round; cursor: pointer; outline: none; transition: opacity .12s; }
+.zc.z1, .zc-pastille.z1 { fill: #123A5E; background: #123A5E; }
+.zc.z2, .zc-pastille.z2 { fill: #1E6FB8; background: #1E6FB8; }
+.zc.z3, .zc-pastille.z3 { fill: #8DB9E0; background: #8DB9E0; }
+.zc.z4, .zc-pastille.z4 { fill: #D5E5F3; background: #D5E5F3; }
+.zc:hover { opacity: .82; }
+.zc:focus-visible, .zc.on { stroke: #F0B429; stroke-width: 3.5; }
+.zc-noms text { font: 600 10.5px var(--texte); text-anchor: middle; pointer-events: none; fill: var(--encre); }
+.zc-noms .n1, .zc-noms .n2 { fill: #fff; }
+.zc-noms .zc-ici { font-weight: 800; font-size: 12px; }
+.zc-base { fill: #F0B429; stroke: #fff; stroke-width: 1.5; pointer-events: none; }
+.zc-legende { list-style: none; margin: 10px 4px 2px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .86rem; color: var(--doux); }
+.zc-legende li { margin: 0; display: flex; align-items: center; gap: 6px; }
+.zc-pastille { display: inline-block; width: 13px; height: 13px; border-radius: 3px; border: 1px solid rgba(18, 58, 94, .25); flex: none; }
+.tarifs th .zc-pastille { margin-right: 7px; vertical-align: -1px; }
+.zc-cote { display: grid; gap: 14px; }
+.zc-res { background: var(--carte); border: 1px solid var(--filet); border-left: 5px solid var(--soleil); border-radius: 10px; padding: 16px 18px; }
+.zc-res p { margin: 0; }
+.zc-vide { color: var(--doux); font-size: .95rem; }
+.zc-nom { font: 800 1.3rem/1.2 var(--titres); color: var(--pin); }
+.zc-detail { color: var(--doux); font-size: .92rem; margin-top: 2px !important; }
+.zc-lignes { margin: 12px 0; display: grid; gap: 6px; }
+.zc-lignes div { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; border-top: 1px solid var(--filet); padding-top: 6px; }
+.zc-lignes dt { color: var(--doux); }
+.zc-lignes dd { margin: 0; font-weight: 700; white-space: nowrap; }
+.zc-lignes .total dd { font-size: 1.35rem; color: var(--pin); font-weight: 800; }
+.zc-res .bt { width: 100%; margin-top: 12px; }
+.zc-bulle { position: absolute; z-index: 3; pointer-events: none; background: var(--pin); color: #fff; border-radius: 8px; padding: 7px 10px; font-size: .84rem; line-height: 1.35; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .5); white-space: nowrap; }
+.zc-bulle b { display: block; }
+
 /* Pied de page */
 .pied { background: var(--pin-fonce); color: #D6E4F0; padding-block: 36px 28px; font-size: .95rem; }
 .pied a { color: #fff; }

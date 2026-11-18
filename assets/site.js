@@ -33,6 +33,73 @@
     if (lien) window.mcSuivi("appel", lien.getAttribute("data-suivi") || "lien");
   });
 
+  /* ---------- Carte des zones de déplacement (page dépannage) ----------
+     Les communes, leur zone et leur distance sont écrites dans la carte elle-même
+     (attributs data-c, data-z, data-km), fabriquée par outils\zones-carte.py. */
+  var carte = document.querySelector("[data-zcarte]");
+  if (carte) {
+    var DIAG = parseInt(carte.getAttribute("data-diag"), 10);
+    var FRAIS = carte.getAttribute("data-frais").split(",").map(Number);
+    var formes = carte.querySelectorAll(".zc");
+    var champ = carte.querySelector("#zc-q");
+    var res = carte.querySelector(".zc-res");
+    var cadre = carte.querySelector(".zc-carte");
+    var plat = function (s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z]/g, ""); };
+    var infos = function (f) {
+      var z = parseInt(f.getAttribute("data-z"), 10);
+      return { nom: f.getAttribute("data-c"), zone: z, km: parseInt(f.getAttribute("data-km"), 10), frais: FRAIS[z - 1] };
+    };
+    var montrer = function (f, depuisChamp) {
+      var c = infos(f);
+      Array.prototype.forEach.call(formes, function (x) { x.classList.toggle("on", x === f); });
+      f.parentNode.appendChild(f); // passe au-dessus des voisines pour que le contour jaune se voie
+      if (!depuisChamp) champ.value = c.nom;
+      res.innerHTML =
+        '<p class="zc-nom"></p>' +
+        '<p class="zc-detail">Zone ' + c.zone + (c.km ? " · environ " + c.km + " km d'Eyguières par la route" : " · sur place") + "</p>" +
+        '<dl class="zc-lignes">' +
+        "<div><dt>Diagnostic sur place</dt><dd>" + DIAG + " €</dd></div>" +
+        "<div><dt>Déplacement</dt><dd>" + (c.frais ? "+ " + c.frais + " €" : "compris") + "</dd></div>" +
+        '<div class="total"><dt>Total avant réparation</dt><dd>' + (DIAG + c.frais) + " €</dd></div>" +
+        "</dl>" +
+        '<p class="petit">Les ' + DIAG + " € du diagnostic sont déduits de la facture si Thierry fait la réparation.</p>" +
+        '<a class="bt bt-soleil bt-appel" href="tel:+33749935315" data-suivi="appel-carte"><span class="ico-tel" aria-hidden="true"></span>Appeler le 07 49 93 53 15</a>';
+      res.querySelector(".zc-nom").textContent = c.nom;
+    };
+    cadre.addEventListener("click", function (ev) { var f = ev.target.closest(".zc"); if (f) montrer(f); });
+    cadre.addEventListener("keydown", function (ev) {
+      var f = ev.target.closest(".zc");
+      if (f && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); montrer(f); }
+    });
+    var chercher = function () {
+      var t = plat(champ.value);
+      if (!t) return;
+      for (var k = 0; k < formes.length; k++) {
+        if (plat(formes[k].getAttribute("data-c")) === t) { montrer(formes[k], true); return; }
+      }
+    };
+    champ.addEventListener("input", chercher);
+    champ.addEventListener("change", chercher);
+
+    // Bulle au survol (souris seulement : au doigt, c'est le toucher qui affiche le prix)
+    var bulle = document.createElement("div");
+    bulle.className = "zc-bulle";
+    bulle.hidden = true;
+    cadre.appendChild(bulle);
+    cadre.addEventListener("pointermove", function (ev) {
+      var f = ev.pointerType === "mouse" && ev.target.closest(".zc");
+      if (!f) { bulle.hidden = true; return; }
+      var c = infos(f);
+      bulle.innerHTML = "<b></b>Diagnostic " + (DIAG + c.frais) + " €, déplacement " + (c.frais ? "+ " + c.frais + " €" : "compris");
+      bulle.firstChild.textContent = c.nom;
+      bulle.hidden = false;
+      var r = cadre.getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top;
+      bulle.style.left = Math.max(4, Math.min(x + 14, r.width - bulle.offsetWidth - 4)) + "px";
+      bulle.style.top = (y - bulle.offsetHeight - 12 < 0 ? y + 18 : y - bulle.offsetHeight - 12) + "px";
+    });
+    cadre.addEventListener("pointerleave", function () { bulle.hidden = true; });
+  }
+
   /* ---------- Formulaire en étapes ---------- */
   Array.prototype.forEach.call(document.querySelectorAll("form[data-quiz]"), function (form) {
     var etapes = form.querySelectorAll(".etape");
