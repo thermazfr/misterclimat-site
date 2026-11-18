@@ -149,6 +149,7 @@ table.tarifs { width: 100%; border-collapse: collapse; min-width: 460px; }
 .tarifs thead th { background: var(--sable); font-size: .9rem; }
 .tarifs tr:last-child td, .tarifs tr:last-child th { border-bottom: 0; }
 .tarifs td:last-child { font-weight: 700; white-space: nowrap; }
+.tarifs th small { display: block; white-space: nowrap; font-weight: 400; color: var(--doux); }
 
 /* Étapes */
 .etapes { list-style: none; padding: 0; margin: 0; counter-reset: e; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
