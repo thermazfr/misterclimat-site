@@ -377,3 +377,7 @@ details p { margin: 10px 0 0; }
 .mc-mot svg.mc-i { height: .92em; margin: 0 .05em; }
 .brand small { margin-top: 3px; }
 @media (max-width: 400px) { .brand { gap: 7px; } .brand .mc-tete { width: 36px; } .brand b.mc-mot { font-size: 1.04rem; } .brand small { font-size: .7rem; } }
+
+/* Un numéro de téléphone ne se coupe jamais en deux lignes */
+.insecable { white-space: nowrap; }
+.bt-appel { flex-wrap: wrap; row-gap: 2px; }
