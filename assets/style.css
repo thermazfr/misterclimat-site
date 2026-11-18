@@ -361,3 +361,19 @@ details p { margin: 10px 0 0; }
 /* Barre d'appel du bas (téléphone) : l'appel prend la place principale */
 .barre { grid-template-columns: 1.6fr 1fr; }
 .barre .bt { min-height: 52px; padding: 10px 12px; }
+
+/* Logo Mister Climat (18/11/2026) : chapeau + moustache, nom en Fredoka, I en thermomètre, A au flocon.
+   Fabriqué par outils\logo.py. */
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("polices/fredoka-700-latin.woff2") format("woff2");
+}
+.brand .mc-tete { width: 46px; height: auto; flex: none; }
+.brand b.mc-mot { font: 700 1.28rem/1 "Fredoka", var(--titres); letter-spacing: .02em; white-space: nowrap; color: var(--pin); }
+.mc-mot svg { height: .71em; width: auto; vertical-align: baseline; margin: 0 .03em; overflow: visible; }
+.mc-mot svg.mc-i { height: .92em; margin: 0 .05em; }
+.brand small { margin-top: 3px; }
+@media (max-width: 400px) { .brand { gap: 7px; } .brand .mc-tete { width: 36px; } .brand b.mc-mot { font-size: 1.04rem; } .brand small { font-size: .7rem; } }
